@@ -12,7 +12,7 @@ routes.get('/', (request, response) => {
     return response.json({ message: 'GET: Hello from Arandelle' })
 })
 
-routes.post('/sessions/:id', SessionController.store)
+routes.post('/sessions', SessionController.store)
 
 routes.get('/ongs', OngController.index)
 routes.post('/ongs', OngController.store)

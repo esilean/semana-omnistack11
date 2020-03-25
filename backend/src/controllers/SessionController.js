@@ -2,7 +2,7 @@ const Ongs = require('../models/Ongs')
 
 module.exports = {
     async store(request, response) {
-        const { id } = request.params
+        const { id } = request.body
 
         let ong = await Ongs.findOne({ where: { id } })
 

@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
+
+import './global.css'
+
+import Routes from './routes'
 
 function App() {
   return (
-    <div>
-      <header>
-          Be a Hero
-      </header>
-    </div>
-  );
+    <Routes />
+  )
 }
 
-export default App;
+export default App
