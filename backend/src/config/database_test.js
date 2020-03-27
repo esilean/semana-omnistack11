@@ -1,7 +1,7 @@
 module.exports = {
     server: 'TRADER',
     dialect: 'mssql',
-    database: 'OmniEleven',
+    database: 'OmniElevenTest',
     username: 'sa',
     password: '123456',
     authentication: {
@@ -12,10 +12,11 @@ module.exports = {
         }
     },
     options: {
-        database: 'OmniEleven',
+        database: 'OmniElevenTest',
         rowCollectionOnDone: true,
         useColumnNames: false,
         encrypt: false,
+        trustServerCertificate: false
     },
     define: {
         timestamps: true,

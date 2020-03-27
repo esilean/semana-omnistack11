@@ -1,5 +1,8 @@
 const Sequelize = require('sequelize')
-const dbConfig = require('../config/database')
+const dbConfigProd = require('../config/database_prod')
+const dbConfigTest = require('../config/database_test')
+
+const dbConfig = process.env.NODE_ENV === 'test' ? dbConfigTest : dbConfigProd
 
 const Ongs = require('../models/Ongs')
 const Incidents = require('../models/Incidents')

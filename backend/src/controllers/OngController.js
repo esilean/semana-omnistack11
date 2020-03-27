@@ -1,19 +1,20 @@
 const Ongs = require('../models/Ongs')
+const generateUniqueId = require('../util/generateUniqueId')
 
 module.exports = {
     async index(request, response) {
-        const ongs = await Ongs.findAll({ include: 'incidents'})
+        const ongs = await Ongs.findAll({ include: 'incidents' })
         return response.json(ongs)
     },
 
     async store(request, response) {
         const { name, email, whatsapp, city, uf } = request.body
-        
+
         let ong = await Ongs.findOne({ where: { name } })
 
         if (!ong) {
 
-            let id = name + "123"
+            let id = generateUniqueId()
 
             ong = await Ongs.create({ id, name, email, whatsapp, city, uf })
         }
